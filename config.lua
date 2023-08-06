@@ -37,58 +37,58 @@ Config.GaragePedModel = "s_m_y_hwaycop_01"
 Config.Locations = {
     ["duty"] = {
         [1] = vector3(442.73, -981.73, 30.69), -- LSPD
-        [2] = vector3(1833.1, 3679.38, 34.19), -- BCSO
-        [3] = vector3(1542.79, 816.17, 77.66), -- State
+        [2] = vector3(1542.79, 816.17, 77.66), -- State
+        [3] = vector3(1833.1, 3679.38, 34.19), -- BCSO
     },
     ["vehicle"] = {
         [1] = vector4(441.46, -975.17, 25.7, 180.71), -- LSPD
-        [2] = vector4(1840.33, 3689.18, 33.97, 312.32), --BCSO
-        [3] = vector4(1550.9, 816.5, 77.12, 232.3), -- State
+        [2] = vector4(1550.9, 816.5, 77.12, 232.3), -- State
+        [3] = vector4(1840.33, 3689.18, 33.97, 312.32), --BCSO
     },
     ["vehspawn"] = { -- The numbers [1] must match the numbers in [vehicle]
         [1] = vector4(435.73, -975.85, 25.7, 89.75), -- LSPD
-        [2] = vector4(1844.9, 3689.61, 33.97, 298.73), -- BCSO
-        [3] = vector4(1553.47, 812.13, 77.06, 193.34), -- State
+        [2] = vector4(1553.47, 812.13, 77.06, 193.34), -- State
+        [3] = vector4(1844.9, 3689.61, 33.97, 298.73), -- BCSO
     },
     ["stash"] = {
         [1] = vector3(451.86, -998.79, 30.69), -- LSPD
-        [2] = vector3(1830.46, 3681.08, 38.87), -- BCSO
-        [3] = vector3(1548.6, 826.54, 82.13), -- State
+        [2] = vector3(1548.6, 826.54, 82.13), -- State
+        [3] = vector3(1830.46, 3681.08, 38.87), -- BCSO
     },
     ["impound"] = {
         [1] = vector3(-154.55, -1174.65, 24.0), -- LS Depot
-        [2] = vector3(1865.29, 3692.63, 34.23), -- BCSO
-        [3] = vector3(1533.51, 780.06, 77.68), -- State
+        [2] = vector3(1533.51, 780.06, 77.68), -- State
+        [3] = vector3(1865.29, 3692.63, 34.23), -- BCSO
     },
     ["helicopter"] = {
         [1] = vector4(455.23, -986.67, 43.69, 303.94), -- LSPD
-        [2] = vector4(1839.2, 3689.01, 33.97, 301.12), -- BCSO
-        [3] = vector4(1568.72, 832.74, 77.14, 326.87), -- State
+        [2] = vector4(1568.72, 832.74, 77.14, 326.87), -- State
+        [3] = vector4(1839.2, 3689.01, 33.97, 301.12), -- BCSO
     },
     ["helispawn"] = { -- The numbers [1] must match the numbers in [helicopter]
         [1] = vector4(449.62, -981.25, 43.69, 86.89), -- LSPD
-        [2] = vector4(1853.28, 3706.41, 33.97, 216.25), -- BCSO
-        [3] = vector4(1564.45, 844.15, 77.14, 64.14), -- State
+        [2] = vector4(1564.45, 844.15, 77.14, 64.14), -- State
+        [3] = vector4(1853.28, 3706.41, 33.97, 216.25), -- BCSO
     },
     ["armory"] = {
         [1] = vector3(487.13, -995.69, 30.69), -- LSPD
-        [2] = vector3(1837.71, 3687.59, 34.19), -- BCSO
-        [3] = vector3(1550.45, 841.93, 77.65), -- State
+        [2] = vector3(1550.45, 841.93, 77.65), -- State
+        [3] = vector3(1837.71, 3687.59, 34.19), -- BCSO
     },
     ["trash"] = {
         [1] = vector3(474.78, -1015.1, 26.27), --LSPD
-        [2] = vector3(1817.1, 3665.23, 34.19), --BCSO
-        [3] = vector3(1551.3, 822.35, 77.66), --State
+        [2] = vector3(1551.3, 822.35, 77.66), --State
+        [3] = vector3(1817.1, 3665.23, 34.19), --BCSO
     },
     ["fingerprint"] = {
         [1] = vector3(473.12, -1007.48, 26.27), -- LSPD
-        [2] = vector3(-452.22, 5997.96, 27.58), --BCSO
-        [3] = vector3(1555.98, 836.48, 77.66), -- State
+        [2] = vector3(1555.98, 836.48, 77.66), -- State
+        [3] = vector3(-452.22, 5997.96, 27.58), --BCSO
     },
     ["evidence"] = {
         [1] = vector3(472.52, -991.42, 26.27), -- LSPD
-        [2] = vector3(1831.56, 3680.19, 38.86), -- BCSO
-        [3] = vector3(1546.82, 835.51, 77.66), -- State
+        [2] = vector3(1546.82, 835.51, 77.66), -- State
+        [3] = vector3(1831.56, 3680.19, 38.86), -- BCSO
     },
     ["labs"] = {
         [1] = vector3(483.49, -988.62, 31.06), -- LSPD
@@ -96,8 +96,9 @@ Config.Locations = {
     ["stations"] = {
         [1] = {label = "Los Santos Police Department", coords = vector4(428.23, -984.28, 29.76, 3.5), sprite= 137, scale= 0.7, colour= 29},
         [2] = {label = "San Andreas State Prison", coords = vector4(1845.903, 2585.873, 45.672, 272.249), sprite= 188, scale= 0.7, colour= 29},
-        [3] = {label = "Blaine County Sheriffs Office", coords = vector4(1853.94, 3685.59, 34.22, 206.54), sprite= 137, scale= 0.7, colour= 29},
-        [4] = {label = "San Andreas State Police", coords = vector4(1538.23, 819.0, 77.66, 63.26), sprite= 137, scale= 0.7, colour= 29},
+        [3] = {label = "San Andreas State Police", coords = vector4(1538.23, 819.0, 77.66, 63.26), sprite= 137, scale= 0.7, colour= 29},
+        [4] = {label = "Blaine County Sheriffs Office", coords = vector4(1853.94, 3685.59, 34.22, 206.54), sprite= 137, scale= 0.7, colour= 29},
+
     },
 }
 
@@ -171,49 +172,63 @@ Config.CarExtras = { -- Extra options to be enabled / disabled
 Config.AuthorizedVehicles = {
     -- Garage 1 vehicles (LSPD)
     [1] = {
-        ["code3cvpi"] = {label = "CPVI", ranks = {1,2}, livery = 1, price = 10},
-        ["code310charg"] = {label = "2010 Charger", ranks = {1,2}, livery = 1, price = 10},
-        ["code318chargk9"] = {label = "2018 Charger K9", ranks = {3}, livery = 1, price = 10},
-        ["code318tahoek9"] = {label = "2018 Tahoe K9", ranks = {3}, livery = 1, price = 10},
-        ["code314charg"] = {label = "2014 Charger", ranks = {3,4}, livery = 1, price = 10},
-        ["code316fpiu"] = {label = "2016 Explorer", ranks = {3,4}, livery = 1, price = 10},
-        ["code3fpis"] = {label = "Taurus", ranks = {3,4}, livery = 1, price = 10},
-        ["code3f150"] = {label = "F-150", ranks = {3,4}, livery = 1, price = 10},
-        ["code314tahoe"] = {label = "2014 Tahoe", ranks = {1,2}, livery = 1, price = 10},
-        ["code318charg"] = {label = "2018 Charger", ranks = {1,2}, livery = 1, price = 10},
-        ["code3durango"] = {label = "Durango", ranks = {3}, livery = 1, price = 10},
-        ["code320exp"] = {label = "2020 Explorer", ranks = {3}, livery = 1, price = 10},
-        ["code3silverado"] = {label = "Silverado", ranks = {3,4}, livery = 1, price = 10},
-        ["code3f250"] = {label = "F-250", ranks = {3,4}, livery = 1, price = 10},
-        ["code318tahoe"] = {label = "2018 Tahoe", ranks = {3,4}, livery = 1, price = 10},
-        ["code3ram"] = {label = "Ram", ranks = {3,4}, livery = 1, price = 10},
-        ["code319silv"] = {label = "2019 Silverado", ranks = {3,4}, livery = 1, price = 10},
-    },
-    -- Garage 2 vehicles (BCSO)
-    [2] = {
-        ["valor5rb"] = {label = "Sheriff Car 1", ranks = {1,2}, livery = 1, price = 10},
-        ["valor2rb"] = {label = "Sheriff Car 2", ranks = {2,3,4}, livery = 1, price = 10},
-        ["valor3rb"] = {label = "Unmarked FBI", ranks = {3,4}, livery = 1, price = 10},
-        ["valor6rb"] = {label = "Unmarked FBI2", ranks = {3,4}, livery = 1, price =10},
-        ["valor15rb"] = {label = "Sheriff Car 1", ranks = {1,2}, livery = 1, price = 10},
-        ["valor14rb"] = {label = "Sheriff Car 2", ranks = {2,3,4}, livery = 1, price = 10},
-        ["valor12rb"] = {label = "Unmarked FBI", ranks = {3,4}, livery = 1, price = 10},
-        ["valor9rb"] = {label = "Unmarked FBI2", ranks = {3,4}, livery = 1, price = 10},
-        ["valor8rb"] = {label = "Sheriff Car 1", ranks = {1,2}, livery = 1, price = 10},
-        ["valor13rb"] = {label = "Sheriff Car 2", ranks = {2,3,4}, livery = 1, price = 10},
-        ["valor10rb"] = {label = "Unmarked FBI", ranks = {3,4}, livery = 1, price = 10},
-        ["chartrxleo"] = {label = "Unmarked FBI2", ranks = {3,4}, livery = 1, price = 10},
+        ["Code311cvpi_bb"] = {label = "2011 CPVI", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 10},
+        ["Code314tahoe_bb"] = {label = "2014 Tahoe", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 10},
+        ["Code316FPIU_bb"] = {label = "2016 Explorer", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 10},
+        ["boattrailer"] = {label = "Boat Trailer", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 10},
+        ["Code3Boat1_bb"] = {label = "Boat", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 10},
+        ["Code3Bike1_bb"] = {label = "Kawasaki Motorcycle", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 10},
+        ["Code3Bike2_bb"] = {label = "BMW Motorcycle", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 10},
+        ["Code3F150_bb"] = {label = "F-150", ranks = {2, 3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 10},
+        ["Code318Charger_bb"] = {label = "2018 Charger", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 10},
+        ["Code318Chargerk9_bb"] = {label = "2014 Charger K9", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 10},
+        ["Code316Taurus_bb"] = {label = "2016 Taurus", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 10},
+        ["Code320tahoe_bb"] = {label = "2020 Tahoe", ranks = {4, 5, 6, 7, 8, 9}, livery = 0, price = 10},
+        ["Code320tahoek9_bb"] = {label = "2020 Tahoe K9", ranks = {4, 5, 6, 7, 8, 9}, livery = 0, price = 10},
+        ["Code321Durango_bb"] = {label = "2021 Durango", ranks = {6, 7, 8, 9}, livery = 0, price = 10},
+        ["Code321Tahoe_bb"] = {label = "2021 Tahoe", ranks = {6, 7, 8, 9}, livery = 0, price = 10},
+        ["code320exp"] = {label = "2020 Explorer", ranks = {6, 7, 8, 9}, livery = 0, price = 10},
+        ["Code3Mustang_bb"] = {label = "Mustang", ranks = {8, 9}, livery = 0, price = 10},
     },
     -- Garage 1 vehicles (State)
+    [2] = {
+        ["Code311cvpi_bb"] = {label = "2011 CPVI", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
+        ["Code314tahoe_bb"] = {label = "2014 Tahoe", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
+        ["Code316FPIU_bb"] = {label = "2016 Explorer", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
+        ["boattrailer"] = {label = "Boat Trailer", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
+        ["Code3Boat1_bb"] = {label = "Boat", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
+        ["Code3Bike1_bb"] = {label = "Kawasaki Motorcycle", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
+        ["Code3Bike2_bb"] = {label = "BMW Motorcycle", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
+        ["Code3F150_bb"] = {label = "F-150", ranks = {2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
+        ["Code318Charger_bb"] = {label = "2018 Charger", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
+        ["Code318Chargerk9_bb"] = {label = "2014 Charger K9", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
+        ["Code316Taurus_bb"] = {label = "2016 Taurus", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
+        ["Code320tahoe_bb"] = {label = "2020 Tahoe", ranks = {4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
+        ["Code320tahoek9_bb"] = {label = "2020 Tahoe K9", ranks = {4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
+        ["Code321Durango_bb"] = {label = "2021 Durango", ranks = {6, 7, 8, 9}, livery = 1, price = 10},
+        ["Code321Tahoe_bb"] = {label = "2021 Tahoe", ranks = {6, 7, 8, 9}, livery = 1, price = 10},
+        ["code320exp"] = {label = "2020 Explorer", ranks = {6, 7, 8, 9}, livery = 0, price = 10},
+        ["Code3Mustang_bb"] = {label = "Mustang", ranks = {8, 9}, livery = 1, price = 10},
+    },
+    -- Garage 2 vehicles (BCSO)
     [3] = {
-        ["valor5rb"] = {label = "Sheriff Car 1", ranks = {1,2}, livery = 1, price = 10},
-        ["socharger"] = {label = "Charger", ranks = {2,3,4}, livery = 1, price = 10},
-        ["sotaurus"] = {label = "Taurus", ranks = {3,4}, livery = 1, price = 10},
-        ["sotruck"] = {label = "Truck", ranks = {3,4}, livery = 1, price = 10},
-        ["soexplorer"] = {label = "Explorer", ranks = {1,2}, livery = 1, price = 10},
-        ["valor10rb"] = {label = "Sheriff Car 2", ranks = {2,3,4}, livery = 1, price = 10},
-        ["valor9rb"] = {label = "Unmarked FBI", ranks = {3,4}, livery = 1, price = 10},
-        ["SILV"] = {label = "Silverado", ranks = {3,4}, livery = 1, price = 10},
+        ["Code311cvpi_bb"] = {label = "2011 CPVI", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 10},
+        ["Code314tahoe_bb"] = {label = "2014 Tahoe", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 10},
+        ["Code316FPIU_bb"] = {label = "2016 Explorer", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 10},
+        ["boattrailer"] = {label = "Boat Trailer", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 10},
+        ["Code3Boat1_bb"] = {label = "Boat", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 10},
+        ["Code3Bike1_bb"] = {label = "Kawasaki Motorcycle", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 10},
+        ["Code3Bike2_bb"] = {label = "BMW Motorcycle", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 10},
+        ["Code3F150_bb"] = {label = "F-150", ranks = {2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 10},
+        ["Code318Charger_bb"] = {label = "2018 Charger", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 10},
+        ["Code318Chargerk9_bb"] = {label = "2014 Charger K9", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 10},
+        ["Code316Taurus_bb"] = {label = "2016 Taurus", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 10},
+        ["Code320tahoe_bb"] = {label = "2020 Tahoe", ranks = {4, 5, 6, 7, 8, 9}, livery = 2, price = 10},
+        ["Code320tahoek9_bb"] = {label = "2020 Tahoe K9", ranks = {4, 5, 6, 7, 8, 9}, livery = 2, price = 10},
+        ["Code321Durango_bb"] = {label = "2021 Durango", ranks = {6, 7, 8, 9}, livery = 2, price = 10},
+        ["Code321Tahoe_bb"] = {label = "2021 Tahoe", ranks = {6, 7, 8, 9}, livery = 2, price = 10},
+        ["code320exp"] = {label = "2020 Explorer", ranks = {6, 7, 8, 9}, livery = 0, price = 10},
+        ["Code3Mustang_bb"] = {label = "Mustang", ranks = {8, 9}, livery = 2, price = 10},
     },
 }
 
