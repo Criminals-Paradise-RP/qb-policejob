@@ -28,8 +28,8 @@ Config.CuffItems = {
     ['ziptie'] = {itemname = "ziptie", propname = "ba_prop_battle_cuffs", needkey = false, keyitem = "flush_cutter", cufftype = 49}
 }
 
-Config.FuelScript = 'LegacyFuel'
-Config.Inventory = 'qb-inventory'
+Config.FuelScript = 'cdn-fuel'
+Config.Inventory = 'ps-inventory'
 Config.LicenseRank = 2
 Config.BlockWallThermals = true -- true/false; lowers thermal cam intensity to stop penetration through walls or tunnels
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
