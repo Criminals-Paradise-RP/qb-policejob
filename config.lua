@@ -32,7 +32,7 @@ Config.FuelScript = 'cdn-fuel'
 Config.Inventory = 'ps-inventory'
 Config.LicenseRank = 2
 Config.BlockWallThermals = true -- true/false; lowers thermal cam intensity to stop penetration through walls or tunnels
-Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
+Config.UseTarget = 'true'
 Config.GaragePedModel = "s_m_y_hwaycop_01"
 Config.Locations = {
     ["duty"] = {
