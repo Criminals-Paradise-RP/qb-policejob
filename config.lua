@@ -24,7 +24,7 @@ Config.BreakOutCuffing = {active = true, duration = math.random(2500,5000), pos 
 -- keyitem = what is the item used to uncuff
 -- cufftype = the animation type. 19 - ped is freezed / 49 - ped can move with cuffs
 Config.CuffItems = { 
-    ['handcuffs'] = {itemname = "handcuffs", propname = "p_cs_cuffs_02_s", needkey = true, keyitem = "cuffkeys", cufftype = 19 },
+    ['handcuffs'] = {itemname = "handcuffs", propname = "p_cs_cuffs_02_s", needkey = true, keyitem = "cuffkeys", cufftype = 49 },
     ['ziptie'] = {itemname = "ziptie", propname = "ba_prop_battle_cuffs", needkey = false, keyitem = "flush_cutter", cufftype = 49}
 }
 
@@ -43,7 +43,7 @@ Config.Locations = {
     ["vehicle"] = {
         [1] = vector4(441.46, -975.17, 25.7, 180.71), -- LSPD
         [2] = vector4(1550.9, 816.5, 77.12, 232.3), -- State
-        [3] = vector4(1840.33, 3689.18, 33.97, 312.32), --BCSO
+        [3] = vector4(1840.33, 3689.18, 33.97, 312.32), -- BCSO
     },
     ["vehspawn"] = { -- The numbers [1] must match the numbers in [vehicle]
         [1] = vector4(435.73, -975.85, 25.7, 89.75), -- LSPD
@@ -265,7 +265,7 @@ Config.CarItems = {
 
 Config.Items = {
     label = "Police Armory",
-    slots = 40,
+    slots = 41,
     items = {
         [1] = {
             name = "ifaks",
@@ -625,7 +625,7 @@ Config.Items = {
             amount = 20,
             info = {},
             type = "item",
-            slot = 33,
+            slot = 34,
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [35] = {
@@ -634,7 +634,7 @@ Config.Items = {
             amount = 20,
             info = {},
             type = "item",
-            slot = 34,
+            slot = 35,
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [36] = {
@@ -643,7 +643,7 @@ Config.Items = {
             amount = 20,
             info = {},
             type = "item",
-            slot = 35,
+            slot = 36,
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [37] = {
@@ -652,7 +652,7 @@ Config.Items = {
             amount = 20,
             info = {},
             type = "item",
-            slot = 36,
+            slot = 37,
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [38] = {
@@ -661,7 +661,7 @@ Config.Items = {
             amount = 20,
             info = {},
             type = "item",
-            slot = 37,
+            slot = 38,
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [39] = {
@@ -670,7 +670,7 @@ Config.Items = {
             amount = 20,
             info = {},
             type = "item",
-            slot = 38,
+            slot = 39,
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [40] = {
@@ -679,7 +679,16 @@ Config.Items = {
             amount = 20,
             info = {},
             type = "item",
-            slot = 39,
+            slot = 40,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+        },
+        [41] = {
+            name = "weapon_beanbagshotgun",
+            price = 0,
+            amount = 20,
+            info = {},
+            type = "item",
+            slot = 41,
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
     }
