@@ -38,6 +38,22 @@ v1.3.1
 - Added vehicle livery menu
 - Added prices for police vehicles
 
+v1.3.2 :
+
+- Added new prop item for zipties
+- Fixed the rob player when cuffed from front
+- Added configurable cufftypes into config where you can choose from wether the player can move with that kind handcuffs or not
+
+v1.3.3
+- Fingerprint UI has been changed
+- Added evidence research option. Police can research filled evidence bags in lab and will see more info about the evidence
+- Changed depot and impound system for police. Able to use target on vehicle and charging for depot / impound
+- Citizens can access police impound and will see their own cars. When they pay the charge they can get their own vehicle
+- Added breakout option. When you enable this in config, the cuffed player will see a minigame and when they success they can escape.
+- Fixed the problem with negative amounts for depot / impound
+- Fixed warning with missing phrases
+- Animation fix for dead or in last stand players
+
 ### Existing
 - Classical requirements like on duty/off duty, clothing, vehicle, stash etc.
 - Citizen ID based armory (Whitelisted)
