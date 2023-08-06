@@ -216,11 +216,28 @@ RegisterNetEvent('police:client:SendToJail', function(time)
     TriggerEvent("prison:client:Enter", time)
 end)
 
-RegisterNetEvent('police:client:SendPoliceEmergencyAlert', function()
+RegisterNetEvent('police:client:SendPoliceEmergencyAlert', function() -- for ps-dispatch
     local Player = QBCore.Functions.GetPlayerData()
-    TriggerServerEvent('police:server:policeAlert', Lang:t('info.officer_down', {lastname = Player.charinfo.lastname, callsign = Player.metadata.callsign}))
-    TriggerServerEvent('hospital:server:ambulanceAlert', Lang:t('info.officer_down', {lastname = Player.charinfo.lastname, callsign = Player.metadata.callsign}))
+    if not AlertSend then
+        if PlayerJob.name == 'police' or PlayerJob.name == 'sasp' or PlayerJob.name == 'sapr' or PlayerJob.name == 'bcso' then
+            exports['ps-dispatch']:OfficerDown()
+        elseif PlayerJob.name == 'ambulance' then
+            exports['ps-dispatch']:EmsDown()
+        end
+        AlertSend = true
+        SetTimeout(math.random(10000, 20000), function()
+            AlertSend = false
+        end)
+    else
+        QBCore.Functions.Notify("Already Send!")
+    end
 end)
+
+-- RegisterNetEvent('police:client:SendPoliceEmergencyAlert', function()
+--     local Player = QBCore.Functions.GetPlayerData()
+--     TriggerServerEvent('police:server:policeAlert', Lang:t('info.officer_down', {lastname = Player.charinfo.lastname, callsign = Player.metadata.callsign}))
+--     TriggerServerEvent('hospital:server:ambulanceAlert', Lang:t('info.officer_down', {lastname = Player.charinfo.lastname, callsign = Player.metadata.callsign}))
+-- end)
 
 -- Threads
 CreateThread(function()
