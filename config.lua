@@ -94,11 +94,11 @@ Config.Locations = {
         [1] = vector3(483.49, -988.62, 31.06), -- LSPD
     },
     ["stations"] = {
-        [1] = {label = "Los Santos Police Department", coords = vector4(428.23, -984.28, 29.76, 3.5), sprite= 137, scale= 0.7, colour= 29},
-        [2] = {label = "San Andreas State Prison", coords = vector4(1845.903, 2585.873, 45.672, 272.249), sprite= 188, scale= 0.7, colour= 29},
-        [3] = {label = "San Andreas State Police", coords = vector4(1538.23, 819.0, 77.66, 63.26), sprite= 137, scale= 0.7, colour= 29},
-        [4] = {label = "Blaine County Sheriffs Office", coords = vector4(1853.94, 3685.59, 34.22, 206.54), sprite= 137, scale= 0.7, colour= 29},
-
+        [1] = {label = "Los Santos Police Department", coords = vector4(428.23, -984.28, 29.76, 3.5), sprite= 137, scale= 0.8, colour= 29},
+        [2] = {label = "San Andreas State Prison", coords = vector4(1845.903, 2585.873, 45.672, 272.249), sprite= 188, scale= 0.8, colour= 29},
+        [3] = {label = "San Andreas State Police", coords = vector4(1538.23, 819.0, 77.66, 63.26), sprite= 137, scale= 0.8, colour= 29},
+        [4] = {label = "Blaine County Sheriffs Office", coords = vector4(1853.94, 3685.59, 34.22, 206.54), sprite= 137, scale= 0.8, colour= 29}, 
+        [5] = {label = "SA Department of Transportation", coords = vector4(821.25, -1320.97, 26.09, 86.33), sprite= 599, scale= 0.8, colour= 5},
     },
 }
 
