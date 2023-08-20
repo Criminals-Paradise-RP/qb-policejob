@@ -174,63 +174,63 @@ Config.CarExtras = { -- Extra options to be enabled / disabled
 Config.AuthorizedVehicles = {
     -- Garage 1 vehicles (LSPD)
     [1] = {
-        ["Code311cvpi_bb"] = {label = "2011 CPVI", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 10},
-        ["Code314tahoe_bb"] = {label = "2014 Tahoe", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 10},
-        ["Code316FPIU_bb"] = {label = "2016 Explorer", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 10},
-        ["boattrailer"] = {label = "Boat Trailer", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 10},
-        ["Code3Boat1_bb"] = {label = "Boat", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 10},
-        ["Code3Bike1_bb"] = {label = "Kawasaki Motorcycle", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 10},
-        ["Code3Bike2_bb"] = {label = "BMW Motorcycle", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 10},
-        ["Code3F150_bb"] = {label = "F-150", ranks = {2, 3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 10},
-        ["Code318Charger_bb"] = {label = "2018 Charger", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 10},
-        ["Code318Chargerk9_bb"] = {label = "2014 Charger K9", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 10},
-        ["Code316Taurus_bb"] = {label = "2016 Taurus", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 10},
-        ["Code320tahoe_bb"] = {label = "2020 Tahoe", ranks = {4, 5, 6, 7, 8, 9}, livery = 0, price = 10},
-        ["Code320tahoek9_bb"] = {label = "2020 Tahoe K9", ranks = {4, 5, 6, 7, 8, 9}, livery = 0, price = 10},
-        ["Code321Durango_bb"] = {label = "2021 Durango", ranks = {6, 7, 8, 9}, livery = 0, price = 10},
-        ["Code321Tahoe_bb"] = {label = "2021 Tahoe", ranks = {6, 7, 8, 9}, livery = 0, price = 10},
-        ["code320exp"] = {label = "2020 Explorer", ranks = {6, 7, 8, 9}, livery = 0, price = 10},
-        ["Code3Mustang_bb"] = {label = "Mustang", ranks = {8, 9}, livery = 0, price = 10},
+        ["Code311cvpi_bb"] = {label = "2011 CPVI", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 300},
+        ["Code314tahoe_bb"] = {label = "2014 Tahoe", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 300},
+        ["Code316FPIU_bb"] = {label = "2016 Explorer", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 300},
+        ["boattrailer"] = {label = "Boat Trailer", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 325},
+        ["Code3Boat1_bb"] = {label = "Boat", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 325},
+        ["Code3Bike1_bb"] = {label = "Kawasaki Motorcycle", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 300},
+        ["Code3Bike2_bb"] = {label = "BMW Motorcycle", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 300},
+        ["Code3F150_bb"] = {label = "F-150", ranks = {2, 3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 325},
+        ["Code318Charger_bb"] = {label = "2018 Charger", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 350},
+        ["Code318Chargerk9_bb"] = {label = "2014 Charger K9", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 350},
+        ["Code316Taurus_bb"] = {label = "2016 Taurus", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 0, price = 325},
+        ["Code320tahoe_bb"] = {label = "2020 Tahoe", ranks = {4, 5, 6, 7, 8, 9}, livery = 0, price = 375},
+        ["Code320tahoek9_bb"] = {label = "2020 Tahoe K9", ranks = {4, 5, 6, 7, 8, 9}, livery = 0, price = 375},
+        ["Code321Durango_bb"] = {label = "2021 Durango", ranks = {6, 7, 8, 9}, livery = 0, price = 400},
+        ["Code321Tahoe_bb"] = {label = "2021 Tahoe", ranks = {6, 7, 8, 9}, livery = 0, price = 400},
+        ["code320exp"] = {label = "2020 Explorer", ranks = {6, 7, 8, 9}, livery = 0, price = 400},
+        ["Code3Mustang_bb"] = {label = "Mustang", ranks = {8, 9}, livery = 0, price = 500},
     },
     -- Garage 1 vehicles (State)
     [2] = {
-        ["Code311cvpi_bb"] = {label = "2011 CPVI", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
-        ["Code314tahoe_bb"] = {label = "2014 Tahoe", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
-        ["Code316FPIU_bb"] = {label = "2016 Explorer", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
-        ["boattrailer"] = {label = "Boat Trailer", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
-        ["Code3Boat1_bb"] = {label = "Boat", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
-        ["Code3Bike1_bb"] = {label = "Kawasaki Motorcycle", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
-        ["Code3Bike2_bb"] = {label = "BMW Motorcycle", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
-        ["Code3F150_bb"] = {label = "F-150", ranks = {2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
-        ["Code318Charger_bb"] = {label = "2018 Charger", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
-        ["Code318Chargerk9_bb"] = {label = "2014 Charger K9", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
-        ["Code316Taurus_bb"] = {label = "2016 Taurus", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
-        ["Code320tahoe_bb"] = {label = "2020 Tahoe", ranks = {4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
-        ["Code320tahoek9_bb"] = {label = "2020 Tahoe K9", ranks = {4, 5, 6, 7, 8, 9}, livery = 1, price = 10},
-        ["Code321Durango_bb"] = {label = "2021 Durango", ranks = {6, 7, 8, 9}, livery = 1, price = 10},
-        ["Code321Tahoe_bb"] = {label = "2021 Tahoe", ranks = {6, 7, 8, 9}, livery = 1, price = 10},
-        ["code320exp"] = {label = "2020 Explorer", ranks = {6, 7, 8, 9}, livery = 0, price = 10},
-        ["Code3Mustang_bb"] = {label = "Mustang", ranks = {8, 9}, livery = 1, price = 10},
+        ["Code311cvpi_bb"] = {label = "2011 CPVI", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 300},
+        ["Code314tahoe_bb"] = {label = "2014 Tahoe", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 300},
+        ["Code316FPIU_bb"] = {label = "2016 Explorer", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 300},
+        ["boattrailer"] = {label = "Boat Trailer", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 325},
+        ["Code3Boat1_bb"] = {label = "Boat", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 325},
+        ["Code3Bike1_bb"] = {label = "Kawasaki Motorcycle", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 300},
+        ["Code3Bike2_bb"] = {label = "BMW Motorcycle", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 300},
+        ["Code3F150_bb"] = {label = "F-150", ranks = {2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 325},
+        ["Code318Charger_bb"] = {label = "2018 Charger", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 350},
+        ["Code318Chargerk9_bb"] = {label = "2014 Charger K9", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 350},
+        ["Code316Taurus_bb"] = {label = "2016 Taurus", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 325},
+        ["Code320tahoe_bb"] = {label = "2020 Tahoe", ranks = {4, 5, 6, 7, 8, 9}, livery = 1, price = 375},
+        ["Code320tahoek9_bb"] = {label = "2020 Tahoe K9", ranks = {4, 5, 6, 7, 8, 9}, livery = 1, price = 375},
+        ["Code321Durango_bb"] = {label = "2021 Durango", ranks = {6, 7, 8, 9}, livery = 1, price = 400},
+        ["Code321Tahoe_bb"] = {label = "2021 Tahoe", ranks = {6, 7, 8, 9}, livery = 1, price = 400},
+        ["code320exp"] = {label = "2020 Explorer", ranks = {6, 7, 8, 9}, livery = 0, price = 400},
+        ["Code3Mustang_bb"] = {label = "Mustang", ranks = {8, 9}, livery = 1, price = 500},
     },
     -- Garage 2 vehicles (BCSO)
     [3] = {
-        ["Code311cvpi_bb"] = {label = "2011 CPVI", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 10},
-        ["Code314tahoe_bb"] = {label = "2014 Tahoe", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 10},
-        ["Code316FPIU_bb"] = {label = "2016 Explorer", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 10},
-        ["boattrailer"] = {label = "Boat Trailer", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 10},
-        ["Code3Boat1_bb"] = {label = "Boat", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 10},
-        ["Code3Bike1_bb"] = {label = "Kawasaki Motorcycle", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 10},
-        ["Code3Bike2_bb"] = {label = "BMW Motorcycle", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 10},
-        ["Code3F150_bb"] = {label = "F-150", ranks = {2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 10},
-        ["Code318Charger_bb"] = {label = "2018 Charger", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 10},
-        ["Code318Chargerk9_bb"] = {label = "2014 Charger K9", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 10},
-        ["Code316Taurus_bb"] = {label = "2016 Taurus", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 10},
-        ["Code320tahoe_bb"] = {label = "2020 Tahoe", ranks = {4, 5, 6, 7, 8, 9}, livery = 2, price = 10},
-        ["Code320tahoek9_bb"] = {label = "2020 Tahoe K9", ranks = {4, 5, 6, 7, 8, 9}, livery = 2, price = 10},
-        ["Code321Durango_bb"] = {label = "2021 Durango", ranks = {6, 7, 8, 9}, livery = 2, price = 10},
-        ["Code321Tahoe_bb"] = {label = "2021 Tahoe", ranks = {6, 7, 8, 9}, livery = 2, price = 10},
-        ["code320exp"] = {label = "2020 Explorer", ranks = {6, 7, 8, 9}, livery = 0, price = 10},
-        ["Code3Mustang_bb"] = {label = "Mustang", ranks = {8, 9}, livery = 2, price = 10},
+        ["Code311cvpi_bb"] = {label = "2011 CPVI", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 300},
+        ["Code314tahoe_bb"] = {label = "2014 Tahoe", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 300},
+        ["Code316FPIU_bb"] = {label = "2016 Explorer", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 300},
+        ["boattrailer"] = {label = "Boat Trailer", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 325},
+        ["Code3Boat1_bb"] = {label = "Boat", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 325},
+        ["Code3Bike1_bb"] = {label = "Kawasaki Motorcycle", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 300},
+        ["Code3Bike2_bb"] = {label = "BMW Motorcycle", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 300},
+        ["Code3F150_bb"] = {label = "F-150", ranks = {2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 325},
+        ["Code318Charger_bb"] = {label = "2018 Charger", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 350},
+        ["Code318Chargerk9_bb"] = {label = "2014 Charger K9", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 350},
+        ["Code316Taurus_bb"] = {label = "2016 Taurus", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 325},
+        ["Code320tahoe_bb"] = {label = "2020 Tahoe", ranks = {4, 5, 6, 7, 8, 9}, livery = 2, price = 375},
+        ["Code320tahoek9_bb"] = {label = "2020 Tahoe K9", ranks = {4, 5, 6, 7, 8, 9}, livery = 2, price = 375},
+        ["Code321Durango_bb"] = {label = "2021 Durango", ranks = {6, 7, 8, 9}, livery = 2, price = 400},
+        ["Code321Tahoe_bb"] = {label = "2021 Tahoe", ranks = {6, 7, 8, 9}, livery = 2, price = 400},
+        ["code320exp"] = {label = "2020 Explorer", ranks = {6, 7, 8, 9}, livery = 0, price = 400},
+        ["Code3Mustang_bb"] = {label = "Mustang", ranks = {8, 9}, livery = 2, price = 500},
     },
 }
 
@@ -267,11 +267,11 @@ Config.CarItems = {
 
 Config.Items = {
     label = "Police Armory",
-    slots = 41,
+    slots = 51,
     items = {
         [1] = {
             name = "ifaks",
-            price = 0,
+            price = 200,
             amount = 10,
             info = {},
             type = "item",
@@ -280,7 +280,7 @@ Config.Items = {
         },
         [2] = {
             name = "tunerlaptop",
-            price = 0,
+            price = 200,
             amount = 1,
             info = {},
             type = "item",
@@ -289,7 +289,7 @@ Config.Items = {
         },
         [3] = {
             name = "empty_evidence_bag",
-            price = 0,
+            price = 50,
             amount = 50,
             info = {},
             type = "item",
@@ -298,7 +298,7 @@ Config.Items = {
         },
         [4] = {
             name = "police_stormram",
-            price = 0,
+            price = 100,
             amount = 50,
             info = {},
             type = "item",
@@ -307,7 +307,7 @@ Config.Items = {
         },
         [5] = {
             name = "radio",
-            price = 0,
+            price = 250,
             amount = 50,
             info = {},
             type = "item",
@@ -316,7 +316,7 @@ Config.Items = {
         },
         [6] = {
             name = "spikestrip",
-            price = 0,
+            price = 150,
             amount = 20,
             info = {},
             type = "item",
@@ -325,7 +325,7 @@ Config.Items = {
         },
         [7] = {
             name = "handcuffs",
-            price = 0,
+            price = 250,
             amount = 1,
             info = {},
             type = "item",
@@ -334,7 +334,7 @@ Config.Items = {
         },
         [8] = {
             name = "weapon_flashlight",
-            price = 0,
+            price = 150,
             amount = 1,
             info = {},
             type = "weapon",
@@ -343,7 +343,7 @@ Config.Items = {
         },
         [9] = {
             name = "uvlight",
-            price = 0,
+            price = 175,
             amount = 1,
             info = {},
             type = "item",
@@ -352,7 +352,7 @@ Config.Items = {
         },
         [10] = {
             name = "armor",
-            price = 0,
+            price = 200,
             amount = 20,
             info = {},
             type = "item",
@@ -361,7 +361,7 @@ Config.Items = {
         },
         [11] = {
             name = "heavyarmor",
-            price = 0,
+            price = 250,
             amount = 20,
             info = {},
             type = "item",
@@ -370,7 +370,7 @@ Config.Items = {
         },
         [12] = {
             name = "weapon_prolaser4",
-            price = 0,
+            price = 200,
             amount = 1,
             info = {},
             type = "item",
@@ -379,7 +379,7 @@ Config.Items = {
         },
         [13] = {
             name = "weapon_colbaton",
-            price = 0,
+            price = 150,
             amount = 1,
             info = {},
             type = "weapon",
@@ -388,7 +388,7 @@ Config.Items = {
         },
         [14] = {
             name = "weapon_taser",
-            price = 0,
+            price = 250,
             amount = 1,
             info = {
                 serie = "",
@@ -399,7 +399,7 @@ Config.Items = {
         },
         [15] = {
             name = "weapon_pistol",
-            price = 0,
+            price = 275,
             amount = 1,
             info = {
                 serie = "",
@@ -413,7 +413,7 @@ Config.Items = {
         },
         [16] = {
             name = "weapon_glock17",
-            price = 0,
+            price = 300,
             amount = 1,
             info = {
                 attachments = {
@@ -426,7 +426,7 @@ Config.Items = {
         },
         [17] = {
             name = "weapon_glock22",
-            price = 0,
+            price = 300,
             amount = 1,
             info = {
                 attachments = {
@@ -439,7 +439,7 @@ Config.Items = {
         },
         [18] = {
             name = "weapon_pumpshotgun",
-            price = 0,
+            price = 400,
             amount = 1,
             info = {
                 serie = "",
@@ -453,7 +453,7 @@ Config.Items = {
         },
         [19] = {
             name = "weapon_remington",
-            price = 0,
+            price = 400,
             amount = 1,
             info = {
                 attachments = {
@@ -466,7 +466,7 @@ Config.Items = {
         },
         [20] = {
             name = "weapon_smg",
-            price = 0,
+            price = 400,
             amount = 1,
             info = {
                 serie = "",
@@ -481,7 +481,7 @@ Config.Items = {
         },
         [21] = {
             name = "weapon_carbinerifle",
-            price = 0,
+            price = 450,
             amount = 1,
             info = {
                 serie = "",
@@ -495,7 +495,7 @@ Config.Items = {
         },
         [22] = {
             name = "weapon_m4",
-            price = 0,
+            price = 450,
             amount = 1,
             info = {
                 attachments = {
@@ -508,7 +508,7 @@ Config.Items = {
         },
         [23] = {
             name = "weapon_ar15",
-            price = 0,
+            price = 450,
             amount = 1,
             info = {
                 attachments = {
@@ -523,7 +523,7 @@ Config.Items = {
         },
         [24] = {
             name = "weapon_scarh",
-            price = 0,
+            price = 475,
             amount = 1,
             info = {
                 attachments = {
@@ -536,7 +536,7 @@ Config.Items = {
         },
         [25] = {
             name = "weapon_heavysniper",
-            price = 0,
+            price = 500,
             amount = 1,
             info = {
                 serie = "",
@@ -547,7 +547,7 @@ Config.Items = {
         },
         [26] = {
             name = "weapon_mk14",
-            price = 0,
+            price = 500,
             amount = 1,
             info = {
                 attachments = {
@@ -560,7 +560,7 @@ Config.Items = {
         },
         [27] = {
             name = "pistol_ammo",
-            price = 0,
+            price = 25,
             amount = 20,
             info = {},
             type = "item",
@@ -569,7 +569,7 @@ Config.Items = {
         },
         [28] = {
             name = "stungun_ammo",
-            price = 0,
+            price = 25,
             amount = 20,
             info = {},
             type = "item",
@@ -578,7 +578,7 @@ Config.Items = {
         },
         [29] = {
             name = "smg_ammo",
-            price = 0,
+            price = 25,
             amount = 20,
             info = {},
             type = "item",
@@ -587,7 +587,7 @@ Config.Items = {
         },
         [30] = {
             name = "shotgun_ammo",
-            price = 0,
+            price = 25,
             amount = 20,
             info = {},
             type = "item",
@@ -596,7 +596,7 @@ Config.Items = {
         },
         [31] = {
             name = "rifle_ammo",
-            price = 0,
+            price = 25,
             amount = 20,
             info = {},
             type = "item",
@@ -605,7 +605,7 @@ Config.Items = {
         },
         [32] = {
             name = "snp_ammo",
-            price = 0,
+            price = 25,
             amount = 20,
             info = {},
             type = "item",
@@ -614,7 +614,7 @@ Config.Items = {
         },
         [33] = {
             name = "policetablet",
-            price = 0,
+            price = 150,
             amount = 20,
             info = {},
             type = "item",
@@ -623,7 +623,7 @@ Config.Items = {
         },
         [34] = {
             name = "megaphone",
-            price = 0,
+            price = 100,
             amount = 20,
             info = {},
             type = "item",
@@ -632,7 +632,7 @@ Config.Items = {
         },
         [35] = {
             name = "harness",
-            price = 0,
+            price = 50,
             amount = 20,
             info = {},
             type = "item",
@@ -641,7 +641,7 @@ Config.Items = {
         },
         [36] = {
             name = "weapon_bzgas",
-            price = 0,
+            price = 200,
             amount = 20,
             info = {},
             type = "item",
@@ -649,48 +649,138 @@ Config.Items = {
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [37] = {
-            name = "camera",
-            price = 0,
-            amount = 20,
-            info = {},
-            type = "item",
-            slot = 37,
-            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
-        },
-        [38] = {
             name = "cuffkeys",
-            price = 0,
+            price = 50,
             amount = 20,
             info = {},
             type = "item",
             slot = 38,
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
-        [39] = {
+        [38] = {
             name = "ziptie",
-            price = 0,
+            price = 50,
             amount = 20,
             info = {},
             type = "item",
             slot = 39,
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
-        [40] = {
+        [39] = {
             name = "flush_cutter",
-            price = 0,
+            price = 50,
             amount = 20,
             info = {},
             type = "item",
             slot = 40,
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
-        [41] = {
+        [40] = {
             name = "weapon_beanbagshotgun",
-            price = 0,
+            price = 200,
             amount = 20,
             info = {},
             type = "item",
             slot = 41,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+        },
+        [41] = {
+            name = "nikon",
+            price = 150,
+            amount = 20,
+            info = {},
+            type = "item",
+            slot = 42,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+        },
+        [42] = {
+            name = "gsrtestkit",
+            price = 100,
+            amount = 20,
+            info = {},
+            type = "item",
+            slot = 43,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+        },
+        [43] = {
+            name = "dnatestkit",
+            price = 100,
+            amount = 20,
+            info = {},
+            type = "item",
+            slot = 44,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+        },
+        [44] = {
+            name = "drugtestkit",
+            price = 100,
+            amount = 20,
+            info = {},
+            type = "item",
+            slot = 45,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+        },
+        [45] = {
+            name = "breathalyzer",
+            price = 100,
+            amount = 20,
+            info = {},
+            type = "item",
+            slot = 46,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+        },
+        [46] = {
+            name = "accesstool",
+            price = 75,
+            amount = 20,
+            info = {},
+            type = "item",
+            slot = 47,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+        },
+        [47] = {
+            name = "fingerprintreader",
+            price = 150,
+            amount = 20,
+            info = {},
+            type = "item",
+            slot = 48,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+        },
+        [48] = {
+            name = "sdcard",
+            price = 25,
+            amount = 20,
+            info = {},
+            type = "item",
+            slot = 49,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+        },
+        [49] = {
+            name = "fingerprintkit",
+            price = 150,
+            amount = 20,
+            info = {},
+            type = "item",
+            slot = 52,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+        },
+        [50] = {
+            name = "mikrosil",
+            price = 100,
+            amount = 20,
+            info = {},
+            type = "item",
+            slot = 53,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+        },
+        [51] = {
+            name = "fingerprinttape",
+            price = 100,
+            amount = 20,
+            info = {},
+            type = "item",
+            slot = 54,
             authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
     }
