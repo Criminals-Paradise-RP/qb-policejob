@@ -24,7 +24,7 @@ Config.BreakOutCuffing = {active = false, duration = math.random(2500,5000), pos
 -- keyitem = what is the item used to uncuff
 -- cufftype = the animation type. 19 - ped is freezed / 49 - ped can move with cuffs
 Config.CuffItems = { 
-    ['handcuffs'] = {itemname = "handcuffs", propname = "p_cs_cuffs_02_s", needkey = true, keyitem = "cuffkeys", cufftype = 49 },
+    ['handcuffs'] = {itemname = "handcuffs", propname = "p_cs_cuffs_02_s", needkey = false, keyitem = "cuffkeys", cufftype = 49 },
     ['ziptie'] = {itemname = "ziptie", propname = "ba_prop_battle_cuffs", needkey = false, keyitem = "flush_cutter", cufftype = 49}
 }
 
@@ -271,7 +271,7 @@ Config.Items = {
     items = {
         [1] = {
             name = "ifaks",
-            price = 200,
+            price = 100,
             amount = 10,
             info = {},
             type = "item",
@@ -280,7 +280,7 @@ Config.Items = {
         },
         [2] = {
             name = "tunerlaptop",
-            price = 200,
+            price = 100,
             amount = 1,
             info = {},
             type = "item",
@@ -289,7 +289,7 @@ Config.Items = {
         },
         [3] = {
             name = "empty_evidence_bag",
-            price = 50,
+            price = 20,
             amount = 50,
             info = {},
             type = "item",
@@ -298,7 +298,7 @@ Config.Items = {
         },
         [4] = {
             name = "police_stormram",
-            price = 100,
+            price = 50,
             amount = 50,
             info = {},
             type = "item",
@@ -307,7 +307,7 @@ Config.Items = {
         },
         [5] = {
             name = "radio",
-            price = 250,
+            price = 150,
             amount = 50,
             info = {},
             type = "item",
@@ -316,7 +316,7 @@ Config.Items = {
         },
         [6] = {
             name = "spikestrip",
-            price = 150,
+            price = 75,
             amount = 20,
             info = {},
             type = "item",
@@ -325,7 +325,7 @@ Config.Items = {
         },
         [7] = {
             name = "handcuffs",
-            price = 250,
+            price = 75,
             amount = 1,
             info = {},
             type = "item",
@@ -334,7 +334,7 @@ Config.Items = {
         },
         [8] = {
             name = "weapon_flashlight",
-            price = 150,
+            price = 75,
             amount = 1,
             info = {},
             type = "weapon",
@@ -343,7 +343,7 @@ Config.Items = {
         },
         [9] = {
             name = "uvlight",
-            price = 175,
+            price = 75,
             amount = 1,
             info = {},
             type = "item",
@@ -352,7 +352,7 @@ Config.Items = {
         },
         [10] = {
             name = "armor",
-            price = 200,
+            price = 100,
             amount = 20,
             info = {},
             type = "item",
@@ -361,7 +361,7 @@ Config.Items = {
         },
         [11] = {
             name = "heavyarmor",
-            price = 250,
+            price = 125,
             amount = 20,
             info = {},
             type = "item",
@@ -370,7 +370,7 @@ Config.Items = {
         },
         [12] = {
             name = "weapon_prolaser4",
-            price = 200,
+            price = 100,
             amount = 1,
             info = {},
             type = "item",
@@ -379,7 +379,7 @@ Config.Items = {
         },
         [13] = {
             name = "weapon_colbaton",
-            price = 150,
+            price = 75,
             amount = 1,
             info = {},
             type = "weapon",
@@ -388,7 +388,7 @@ Config.Items = {
         },
         [14] = {
             name = "weapon_taser",
-            price = 250,
+            price = 125,
             amount = 1,
             info = {
                 serie = "",
@@ -399,7 +399,7 @@ Config.Items = {
         },
         [15] = {
             name = "weapon_pistol",
-            price = 275,
+            price = 125,
             amount = 1,
             info = {
                 serie = "",
@@ -413,7 +413,7 @@ Config.Items = {
         },
         [16] = {
             name = "weapon_glock17",
-            price = 300,
+            price = 150,
             amount = 1,
             info = {
                 attachments = {
@@ -426,7 +426,7 @@ Config.Items = {
         },
         [17] = {
             name = "weapon_glock22",
-            price = 300,
+            price = 150,
             amount = 1,
             info = {
                 attachments = {
@@ -439,7 +439,7 @@ Config.Items = {
         },
         [18] = {
             name = "weapon_pumpshotgun",
-            price = 400,
+            price = 200,
             amount = 1,
             info = {
                 serie = "",
@@ -453,7 +453,7 @@ Config.Items = {
         },
         [19] = {
             name = "weapon_remington",
-            price = 400,
+            price = 200,
             amount = 1,
             info = {
                 attachments = {
@@ -466,7 +466,7 @@ Config.Items = {
         },
         [20] = {
             name = "weapon_smg",
-            price = 400,
+            price = 200,
             amount = 1,
             info = {
                 serie = "",
@@ -481,7 +481,7 @@ Config.Items = {
         },
         [21] = {
             name = "weapon_carbinerifle",
-            price = 450,
+            price = 225,
             amount = 1,
             info = {
                 serie = "",
@@ -495,7 +495,7 @@ Config.Items = {
         },
         [22] = {
             name = "weapon_m4",
-            price = 450,
+            price = 225,
             amount = 1,
             info = {
                 attachments = {
@@ -508,7 +508,7 @@ Config.Items = {
         },
         [23] = {
             name = "weapon_ar15",
-            price = 450,
+            price = 225,
             amount = 1,
             info = {
                 attachments = {
@@ -523,7 +523,7 @@ Config.Items = {
         },
         [24] = {
             name = "weapon_scarh",
-            price = 475,
+            price = 250,
             amount = 1,
             info = {
                 attachments = {
@@ -536,7 +536,7 @@ Config.Items = {
         },
         [25] = {
             name = "weapon_heavysniper",
-            price = 500,
+            price = 250,
             amount = 1,
             info = {
                 serie = "",
@@ -547,7 +547,7 @@ Config.Items = {
         },
         [26] = {
             name = "weapon_mk14",
-            price = 500,
+            price = 250,
             amount = 1,
             info = {
                 attachments = {
@@ -560,7 +560,7 @@ Config.Items = {
         },
         [27] = {
             name = "pistol_ammo",
-            price = 25,
+            price = 10,
             amount = 20,
             info = {},
             type = "item",
@@ -569,7 +569,7 @@ Config.Items = {
         },
         [28] = {
             name = "stungun_ammo",
-            price = 25,
+            price = 10,
             amount = 20,
             info = {},
             type = "item",
@@ -578,7 +578,7 @@ Config.Items = {
         },
         [29] = {
             name = "smg_ammo",
-            price = 25,
+            price = 10,
             amount = 20,
             info = {},
             type = "item",
@@ -587,7 +587,7 @@ Config.Items = {
         },
         [30] = {
             name = "shotgun_ammo",
-            price = 25,
+            price = 10,
             amount = 20,
             info = {},
             type = "item",
@@ -596,7 +596,7 @@ Config.Items = {
         },
         [31] = {
             name = "rifle_ammo",
-            price = 25,
+            price = 10,
             amount = 20,
             info = {},
             type = "item",
@@ -605,7 +605,7 @@ Config.Items = {
         },
         [32] = {
             name = "snp_ammo",
-            price = 25,
+            price = 10,
             amount = 20,
             info = {},
             type = "item",
@@ -614,7 +614,7 @@ Config.Items = {
         },
         [33] = {
             name = "policetablet",
-            price = 150,
+            price = 75,
             amount = 20,
             info = {},
             type = "item",
@@ -623,7 +623,7 @@ Config.Items = {
         },
         [34] = {
             name = "megaphone",
-            price = 100,
+            price = 50,
             amount = 20,
             info = {},
             type = "item",
@@ -641,7 +641,7 @@ Config.Items = {
         },
         [36] = {
             name = "weapon_bzgas",
-            price = 200,
+            price = 100,
             amount = 20,
             info = {},
             type = "item",
@@ -650,7 +650,7 @@ Config.Items = {
         },
         [37] = {
             name = "cuffkeys",
-            price = 50,
+            price = 25,
             amount = 20,
             info = {},
             type = "item",
@@ -659,7 +659,7 @@ Config.Items = {
         },
         [38] = {
             name = "ziptie",
-            price = 50,
+            price = 25,
             amount = 20,
             info = {},
             type = "item",
@@ -668,7 +668,7 @@ Config.Items = {
         },
         [39] = {
             name = "flush_cutter",
-            price = 50,
+            price = 25,
             amount = 20,
             info = {},
             type = "item",
@@ -677,7 +677,7 @@ Config.Items = {
         },
         [40] = {
             name = "weapon_beanbagshotgun",
-            price = 200,
+            price = 100,
             amount = 20,
             info = {},
             type = "item",
@@ -686,7 +686,7 @@ Config.Items = {
         },
         [41] = {
             name = "nikon",
-            price = 150,
+            price = 75,
             amount = 20,
             info = {},
             type = "item",
@@ -695,7 +695,7 @@ Config.Items = {
         },
         [42] = {
             name = "gsrtestkit",
-            price = 100,
+            price = 50,
             amount = 20,
             info = {},
             type = "item",
@@ -704,7 +704,7 @@ Config.Items = {
         },
         [43] = {
             name = "dnatestkit",
-            price = 100,
+            price = 50,
             amount = 20,
             info = {},
             type = "item",
@@ -713,7 +713,7 @@ Config.Items = {
         },
         [44] = {
             name = "drugtestkit",
-            price = 100,
+            price = 50,
             amount = 20,
             info = {},
             type = "item",
@@ -722,7 +722,7 @@ Config.Items = {
         },
         [45] = {
             name = "breathalyzer",
-            price = 100,
+            price = 50,
             amount = 20,
             info = {},
             type = "item",
@@ -731,7 +731,7 @@ Config.Items = {
         },
         [46] = {
             name = "accesstool",
-            price = 75,
+            price = 50,
             amount = 20,
             info = {},
             type = "item",
@@ -740,7 +740,7 @@ Config.Items = {
         },
         [47] = {
             name = "fingerprintreader",
-            price = 150,
+            price = 75,
             amount = 20,
             info = {},
             type = "item",
@@ -749,7 +749,7 @@ Config.Items = {
         },
         [48] = {
             name = "sdcard",
-            price = 25,
+            price = 10,
             amount = 20,
             info = {},
             type = "item",
@@ -758,7 +758,7 @@ Config.Items = {
         },
         [49] = {
             name = "fingerprintkit",
-            price = 150,
+            price = 75,
             amount = 20,
             info = {},
             type = "item",
@@ -767,7 +767,7 @@ Config.Items = {
         },
         [50] = {
             name = "mikrosil",
-            price = 100,
+            price = 50,
             amount = 20,
             info = {},
             type = "item",
@@ -776,7 +776,7 @@ Config.Items = {
         },
         [51] = {
             name = "fingerprinttape",
-            price = 100,
+            price = 50,
             amount = 20,
             info = {},
             type = "item",
