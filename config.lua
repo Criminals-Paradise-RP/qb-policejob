@@ -16,7 +16,7 @@ Config.TieItem = 'ziptie'
 Config.CutTieItem = 'flush_cutter'
 Config.CutCuffItem = 'bolt_cutter'
 Config.BrokenCuffItem = 'broken_handcuffs'
-Config.BreakOutCuffing = {active = false, duration = math.random(2500,5000), pos = math.random(10, 30), width = math.random(10, 20)}
+Config.BreakOutCuffing = {active = true, duration = math.random(2500,5000), pos = math.random(10, 30), width = math.random(10, 20)}
 
 -- itemname = name of the item
 -- propname = the prop used for cuffing
@@ -24,7 +24,7 @@ Config.BreakOutCuffing = {active = false, duration = math.random(2500,5000), pos
 -- keyitem = what is the item used to uncuff
 -- cufftype = the animation type. 19 - ped is freezed / 49 - ped can move with cuffs
 Config.CuffItems = { 
-    ['handcuffs'] = {itemname = "handcuffs", propname = "p_cs_cuffs_02_s", needkey = false, keyitem = "cuffkeys", cufftype = 49 },
+    ['handcuffs'] = {itemname = "handcuffs", propname = "p_cs_cuffs_02_s", needkey = true, keyitem = "cuffkeys", cufftype = 49 },
     ['ziptie'] = {itemname = "ziptie", propname = "ba_prop_battle_cuffs", needkey = false, keyitem = "flush_cutter", cufftype = 49}
 }
 
