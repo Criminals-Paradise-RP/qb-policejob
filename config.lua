@@ -17,6 +17,9 @@ Config.CutTieItem = 'flush_cutter'
 Config.CutCuffItem = 'bolt_cutter'
 Config.BrokenCuffItem = 'broken_handcuffs'
 Config.BreakOutCuffing = {active = true, duration = math.random(2500,5000), pos = math.random(10, 30), width = math.random(10, 20)}
+Config.BreakoutMinigame = 'ps-ui' -- Choose the cuff breakout minigame : qb-skillbar / ps-ui (circle)
+Config.TargetSystem = 'ox_target' -- Target system you want to use : qb-target / qtarget / ox_target
+Config.Debug = false -- Enable / Disable debugpoly 
 
 -- itemname = name of the item
 -- propname = the prop used for cuffing
@@ -24,8 +27,14 @@ Config.BreakOutCuffing = {active = true, duration = math.random(2500,5000), pos 
 -- keyitem = what is the item used to uncuff
 -- cufftype = the animation type. 19 - ped is freezed / 49 - ped can move with cuffs
 Config.CuffItems = { 
-    ['handcuffs'] = {itemname = "handcuffs", propname = "p_cs_cuffs_02_s", needkey = true, keyitem = "cuffkeys", cufftype = 49 },
+    ['handcuffs'] = {itemname = "handcuffs", propname = "p_cs_cuffs_02_s", needkey = true, keyitem = "cuffkeys", cufftype = 19 },
     ['ziptie'] = {itemname = "ziptie", propname = "ba_prop_battle_cuffs", needkey = false, keyitem = "flush_cutter", cufftype = 49}
+}
+
+Config.BlipColors = {
+    ['police'] = 29,
+    ['bcso'] = 47,
+    ['sasp'] = 1
 }
 
 Config.FuelScript = 'cdn-fuel'
@@ -36,69 +45,61 @@ Config.UseTarget = 'true'
 Config.GaragePedModel = "s_m_y_hwaycop_01"
 Config.Locations = {
     ["duty"] = {
-        [1] = vector3(442.73, -981.73, 30.69), -- LSPD
-        [2] = vector3(1542.79, 816.17, 77.66), -- State
-        [3] = vector3(1833.1, 3679.38, 34.19), -- BCSO
+        [1] = vector3(440.6539, -975.6356, 30.6899), -- LSPD
+        [2] = vector3(1853.2727, 3689.8499, 34.2670), -- BCSO
+        -- [3] = vector3(1832.68, 3678.4, 34.28), -- Sandy
     },
     ["vehicle"] = {
-        [1] = vector4(441.46, -975.17, 25.7, 180.71), -- LSPD
-        [2] = vector4(1550.9, 816.5, 77.12, 232.3), -- State
-        [3] = vector4(1840.33, 3689.18, 33.97, 312.32), -- BCSO
+        [1] = vector4(442.1, -1013.92, 28.63, 184.47), -- LSPD
+        [2] = vector4(1858.95, 3681.95, 33.83, 219.83), --BCSO
+        -- [3] = vector4(1858.95, 3681.95, 33.83, 219.83), -- Sandy
     },
     ["vehspawn"] = { -- The numbers [1] must match the numbers in [vehicle]
-        [1] = vector4(435.73, -975.85, 25.7, 89.75), -- LSPD
-        [2] = vector4(1553.47, 812.13, 77.06, 193.34), -- State
-        [3] = vector4(1844.9, 3689.61, 33.97, 298.73), -- BCSO
+        [1] = vector4(442.4, -1025.02, 28.29, 4.11), -- LSPD
+        [2] = vector4(1850.89, 3673.04, 33.37, 211.26), -- BCSO
+        -- [3] = vector4(1850.89, 3673.04, 33.37, 211.26), -- Sandy
     },
     ["stash"] = {
-        [1] = vector3(451.86, -998.79, 30.69), -- LSPD
-        [2] = vector3(1548.6, 826.54, 82.13), -- State
-        [3] = vector3(1830.46, 3681.08, 38.87), -- BCSO
+        [1] = vector3(451.2411, -993.3360, 30.6899), -- LSPD
+        [2] = vector3(1851.2550, 3693.4045, 34.2669), -- BCSO
+        -- [3] = vector3(1837.89, 3688.08, 34.19), -- Sandy
     },
     ["impound"] = {
-        [1] = vector3(-154.55, -1174.65, 24.0), -- LS Depot
-        [2] = vector3(1533.51, 780.06, 77.68), -- State
-        [3] = vector3(1865.29, 3692.63, 34.23), -- BCSO
+        [1] = vector3(479.08, -1022.54, 28.01), -- LSPD
+        [2] = vector3(1822.14, 3689.16, 33.97),
     },
     ["helicopter"] = {
-        [1] = vector4(455.23, -986.67, 43.69, 303.94), -- LSPD
-        [2] = vector4(1568.72, 832.74, 77.14, 326.87), -- State
-        [3] = vector4(1839.2, 3689.01, 33.97, 301.12), -- BCSO
+        [1] = vector4(460.24, -980.18, 43.69, 181.43), -- LSPD
+        [2] = vector4(1852.9902, 3706.7876, 33.2052, 21.3223), -- BCSO
     },
     ["helispawn"] = { -- The numbers [1] must match the numbers in [helicopter]
-        [1] = vector4(449.62, -981.25, 43.69, 86.89), -- LSPD
-        [2] = vector4(1564.45, 844.15, 77.14, 64.14), -- State
-        [3] = vector4(1853.28, 3706.41, 33.97, 216.25), -- BCSO
+        [1] = vector4(449.16, -981.23, 43.69, 165.79), -- LSPD
+        [2] = vector4(1852.5796, 3713.4500, 33.1832, 123.2525), -- BCSO
     },
     ["armory"] = {
-        [1] = vector3(487.13, -995.69, 30.69), -- LSPD
-        [2] = vector3(1550.45, 841.93, 77.65), -- State
-        [3] = vector3(1837.71, 3687.59, 34.19), -- BCSO
+        [1] = vector3(454.1459, -980.0547, 30.6899), -- LSPD
+        [2] = vector3(1841.4331, 3690.6094, 34.2669), -- BCSO
+        -- [3] = vector3(1836.2, 3687.01, 34.19), -- Sandy
     },
     ["trash"] = {
-        [1] = vector3(474.78, -1015.1, 26.27), --LSPD
-        [2] = vector3(1551.3, 822.35, 77.66), --State
-        [3] = vector3(1817.1, 3665.23, 34.19), --BCSO
+        [1] = vector3(439.7670, -976.7778, 30.6899), -- LSPD
     },
     ["fingerprint"] = {
-        [1] = vector3(473.12, -1007.48, 26.27), -- LSPD
-        [2] = vector3(1555.98, 836.48, 77.66), -- State
-        [3] = vector3(-452.22, 5997.96, 27.58), --BCSO
+        [1] = vector3(461.5555, -989.1661, 24.9154), -- LSPD
+        [2] = vector3(1847.3030, 3680.2104, 30.2594), --BCSO
     },
     ["evidence"] = {
-        [1] = vector3(472.52, -991.42, 26.27), -- LSPD
-        [2] = vector3(1546.82, 835.51, 77.66), -- State
-        [3] = vector3(1831.56, 3680.19, 38.86), -- BCSO
+        [1] = vector3(455.1279, -985.4862, 30.6899), -- LSPD
+        [2] = vector3(1855.2788, 3698.9546, 34.2670), -- BCSO
+        -- [3] = vector3(1817.97, 3672.25, 34.2), -- Sandy
     },
     ["labs"] = {
-        [1] = vector3(483.49, -988.62, 31.06), -- LSPD
+        [1] = vector3(436.9399, -994.6153, 30.6899), -- LSPD
     },
     ["stations"] = {
-        [1] = {label = "Los Santos Police Department", coords = vector4(428.23, -984.28, 29.76, 3.5), sprite= 137, scale= 0.8, colour= 29},
-        [2] = {label = "San Andreas State Prison", coords = vector4(1845.903, 2585.873, 45.672, 272.249), sprite= 188, scale= 0.8, colour= 29},
-        [3] = {label = "San Andreas State Police", coords = vector4(1538.23, 819.0, 77.66, 63.26), sprite= 137, scale= 0.8, colour= 29},
-        [4] = {label = "Blaine County Sheriffs Office", coords = vector4(1853.94, 3685.59, 34.22, 206.54), sprite= 137, scale= 0.8, colour= 29}, 
-        [5] = {label = "SA Department of Transportation", coords = vector4(821.25, -1320.97, 26.09, 86.33), sprite= 599, scale= 0.8, colour= 5},
+        [1] = {label = "Los Santos Police Department", coords = vector4(428.23, -984.28, 29.76, 3.5), sprite= 137, scale= 0.7, colour= 29},
+        [2] = {label = "San Andreas State Prison", coords = vector4(1845.903, 2585.873, 45.672, 272.249), sprite= 137, scale= 0.7, colour= 1},
+        [3] = {label = "Blaine County Sheriffs Office", coords = vector4(1855.6288, 3682.4421, 34.2675, 20.0169), sprite= 137, scale= 0.7, colour= 47},
     },
 }
 
@@ -141,8 +142,6 @@ Config.SecurityCameras = {
         [32] = {label = "Vangelico Jewelery CAM#2", coords = vector3(-627.51, -229.51, 40.24), r = {x = -35.0, y = 0.0, z = -95.78}, canRotate = true, isOnline = true},
         [33] = {label = "Vangelico Jewelery CAM#3", coords = vector3(-620.3, -224.31, 40.23), r = {x = -35.0, y = 0.0, z = 165.78}, canRotate = true, isOnline = true},
         [34] = {label = "Vangelico Jewelery CAM#4", coords = vector3(-622.57, -236.3, 40.31), r = {x = -35.0, y = 0.0, z = 5.78}, canRotate = true, isOnline = true},
-        [35] = {label = "Vangelico's Grapeseed CAM#1", coords = vector3(1645.27, 4886.01, 44.7), r = {x = -35.0, y = 0.0, z = -141.82}, canRotate = true, isOnline = true},
-        [36] = {label = "Vangelico's Paleto CAM#1", coords = vector3(-374.46, 6045.52, 34.05), r = {x = -35.0, y = 0.0, z = -105.09}, canRotate = true, isOnline = true},
     },
 }
 Config.EnableMods = true -- Enable the mods below to be applied
@@ -785,3 +784,4 @@ Config.Items = {
         },
     }
 }
+
