@@ -9,29 +9,34 @@ local QBCore = exports['qb-core']:GetCoreObject()
 local updatingCops = false
 local CuffedPlayers = {}
 local seckey = "hidev-"..math.random(111111, 999999)
+local GPSTable = {}
 
 -- Functions
 local function UpdateBlips()
     local dutyPlayers = {}
-    local players = QBCore.Functions.GetQBPlayers()
-    for _, v in pairs(players) do
-        if v and (v.PlayerData.job.type == "leo" or v.PlayerData.job.name == "ambulance" or v.PlayerData.job.type == "ems") and v.PlayerData.job.onduty then
-            local coords = GetEntityCoords(GetPlayerPed(v.PlayerData.source))
-            local heading = GetEntityHeading(GetPlayerPed(v.PlayerData.source))
-            dutyPlayers[#dutyPlayers+1] = {
-                source = v.PlayerData.source,
-                label = v.PlayerData.metadata["callsign"],
-                job = v.PlayerData.job.name,
-                location = {
-                    x = coords.x,
-                    y = coords.y,
-                    z = coords.z,
-                    w = heading
-                }
+    for k, v in pairs(GPSTable) do
+        local ply = k
+        local coords = GetEntityCoords(GetPlayerPed(ply))
+        local heading = GetEntityHeading(GetPlayerPed(ply))
+        dutyPlayers[#dutyPlayers+1] = {
+            source = ply,
+            label = v.call,
+            vehClass = v.vehClass,
+            job = v.job,
+            gpsactive = v.gpsactive,
+            location = {
+                x = coords.x,
+                y = coords.y,
+                z = coords.z,
+                w = heading
             }
+        }
+    end
+    for k, v in pairs(GPSTable) do
+        if k == v.source then
+            TriggerClientEvent("police:client:UpdateBlips", k, dutyPlayers)
         end
     end
-    TriggerClientEvent("police:client:UpdateBlips", -1, dutyPlayers)
 end
 
 local function CreateBloodId()
@@ -330,7 +335,7 @@ QBCore.Commands.Add("depot", Lang:t("commands.depot"), {}, false, function(sourc
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     if Player.PlayerData.job.type == "leo" and Player.PlayerData.job.onduty then
-        TriggerClientEvent("police:client:ImpoundVehicle", src, false)
+        TriggerClientEvent("police:client:ImpoundVehicle", src, false, tonumber(args[1]))
     else
         TriggerClientEvent('QBCore:Notify', src, Lang:t("error.on_duty_police_only"), 'error')
     end
@@ -396,11 +401,11 @@ QBCore.Commands.Add('fine', Lang:t("commands.fine"), {{name = 'id', help = Lang:
                     if billed.Functions.RemoveMoney('bank', amount, "paid-fine") then
                         TriggerClientEvent('QBCore:Notify', source, Lang:t("info.fine_issued"), 'success')
                         TriggerClientEvent('QBCore:Notify', billed.PlayerData.source, Lang:t("info.received_fine"))
-                        exports['qb-management']:AddMoney(biller.PlayerData.job.name, amount)
+                        exports['qb-banking']:AddMoney(biller.PlayerData.job.name, amount)
                     elseif billed.Functions.RemoveMoney('cash', amount, "paid-fine") then
                         TriggerClientEvent('QBCore:Notify', source, Lang:t("info.fine_issued"), 'success')
                         TriggerClientEvent('QBCore:Notify', billed.PlayerData.source, Lang:t("info.received_fine"))
-                        exports['qb-management']:AddMoney(biller.PlayerData.job.name, amount)
+                        exports['qb-banking']:AddMoney(biller.PlayerData.job.name, amount)
                     else
                         MySQL.Async.insert('INSERT INTO phone_invoices (citizenid, amount, society, sender, sendercitizenid) VALUES (?, ?, ?, ?, ?)',{billed.PlayerData.citizenid, amount, biller.PlayerData.job.name, biller.PlayerData.charinfo.firstname, biller.PlayerData.citizenid}, function(id)
                             if id then
@@ -494,21 +499,21 @@ RegisterNetEvent('police:server:SendTrackerLocation', function(coords, requestId
     TriggerClientEvent("qb-phone:client:addPoliceAlert", requestId, alertData)
 end)
 
--- QBCore.Commands.Add('911p', Lang:t("commands.police_report"), {{name='message', help= Lang:t("commands.message_sent")}}, false, function(source, args)
---     local src = source
---     local message
---     if args[1] then message = table.concat(args, " ") else message = Lang:t("commands.civilian_call") end
---     local ped = GetPlayerPed(src)
---     local coords = GetEntityCoords(ped)
---     local players = QBCore.Functions.GetQBPlayers()
---     for _, v in pairs(players) do
---         if v and v.PlayerData.job.type == 'leo' and v.PlayerData.job.onduty then
---             local alertData = {title = Lang:t("commands.emergency_call"), coords = {x = coords.x, y = coords.y, z = coords.z}, description = message}
---             TriggerClientEvent("qb-phone:client:addPoliceAlert", v.PlayerData.source, alertData)
---             TriggerClientEvent('police:client:policeAlert', v.PlayerData.source, coords, message)
---         end
---     end
--- end)
+QBCore.Commands.Add('911p', Lang:t("commands.police_report"), {{name='message', help= Lang:t("commands.message_sent")}}, false, function(source, args)
+    local src = source
+    local message
+    if args[1] then message = table.concat(args, " ") else message = Lang:t("commands.civilian_call") end
+    local ped = GetPlayerPed(src)
+    local coords = GetEntityCoords(ped)
+    local players = QBCore.Functions.GetQBPlayers()
+    for _, v in pairs(players) do
+        if v and v.PlayerData.job.type == 'leo' and v.PlayerData.job.onduty then
+            local alertData = {title = Lang:t("commands.emergency_call"), coords = {x = coords.x, y = coords.y, z = coords.z}, description = message}
+            TriggerClientEvent("qb-phone:client:addPoliceAlert", v.PlayerData.source, alertData)
+            TriggerClientEvent('police:client:policeAlert', v.PlayerData.source, coords, message)
+        end
+    end
+end)
 
 -- Items
 for _,v in pairs(Config.CuffItems) do
@@ -545,10 +550,24 @@ QBCore.Functions.CreateUseableItem('filled_evidence_bag', function(source, item)
     end
 end)
 
+QBCore.Functions.CreateUseableItem('leo-gps', function(source, item)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+
+    if Player and Player.PlayerData.job.type == "leo" then
+        TriggerClientEvent('police:client:UseGPS', src)
+    end
+end)
+
 -- Callbacks
 QBCore.Functions.CreateCallback('police:server:isPlayerDead', function(_, cb, playerId)
     local Player = QBCore.Functions.GetPlayer(playerId)
     cb(Player.PlayerData.metadata["isdead"])
+end)
+
+QBCore.Functions.CreateCallback('police:server:isPlayerLast', function(_, cb, playerId)
+    local Player = QBCore.Functions.GetPlayer(playerId)
+    cb(Player.PlayerData.metadata["inlaststand"])
 end)
 
 -- QBCore.Functions.CreateCallback('police:GetPlayerStatus', function(_, cb, playerId)
@@ -739,8 +758,7 @@ RegisterNetEvent('police:server:TakeOutImpound', function(plate, garage)
     local playerPed = GetPlayerPed(src)
     local playerCoords = GetEntityCoords(playerPed)
     local targetCoords = Config.Locations["impound"][garage]
-    if #(playerCoords - targetCoords) > 10.0 then return end
-		-- Removed DropPlayer(src, "Attempted exploit abuse") from before "then" above
+    if #(playerCoords - targetCoords) > 10.0 then return DropPlayer(src, "Attempted exploit abuse") end
 
     MySQL.update('UPDATE player_vehicles SET state = ? WHERE plate = ?', {0, plate})
     TriggerClientEvent('QBCore:Notify', src, Lang:t("success.impound_vehicle_removed"), 'success')
@@ -752,13 +770,16 @@ RegisterNetEvent('police:server:CuffPlayer', function(position, id, item)
     local targetPed = GetPlayerPed(id)
     local playerCoords = GetEntityCoords(playerPed)
     local targetCoords = GetEntityCoords(targetPed)
-    if #(playerCoords - targetCoords) > 2.5 then return end
-        -- DropPlayer(src, "Attempted exploit abuse")
+    if #(playerCoords - targetCoords) > 2.5 then DropPlayer(src, "Attempted exploit abuse") end
 
     local Player = QBCore.Functions.GetPlayer(src)
     local CuffedPlayer = QBCore.Functions.GetPlayer(id)
     if not Player or not CuffedPlayer or not Player.Functions.GetItemByName(item) then return end
     TriggerClientEvent('police:client:GetCuffed', CuffedPlayer.PlayerData.source, Player.PlayerData.source, position, item)
+end)
+
+RegisterNetEvent('qb-policejob:server:NotifyOtherPlayer', function(source, message, type, time)
+    TriggerClientEvent('QBCore:Notify', source, message, type, time)
 end)
 
 RegisterNetEvent('police:server:CutCuffs', function(id, item)
@@ -767,8 +788,7 @@ RegisterNetEvent('police:server:CutCuffs', function(id, item)
     local targetPed = GetPlayerPed(id)
     local playerCoords = GetEntityCoords(playerPed)
     local targetCoords = GetEntityCoords(targetPed)
-    if #(playerCoords - targetCoords) > 2.5 then return end
-        -- DropPlayer(src, "Attempted exploit abuse")
+    if #(playerCoords - targetCoords) > 2.5 then DropPlayer(src, "Attempted exploit abuse") end
 
     local Player = QBCore.Functions.GetPlayer(src)
     local CuffedPlayer = QBCore.Functions.GetPlayer(id)
@@ -786,8 +806,7 @@ RegisterNetEvent('police:server:TiePlayer', function(playerId, isSoftcuff)
     local targetPed = GetPlayerPed(playerId)
     local playerCoords = GetEntityCoords(playerPed)
     local targetCoords = GetEntityCoords(targetPed)
-    if #(playerCoords - targetCoords) > 2.5 then return end
-        -- DropPlayer(src, "Attempted exploit abuse")
+    if #(playerCoords - targetCoords) > 2.5 then return DropPlayer(src, "Attempted exploit abuse") end
 
     local Player = QBCore.Functions.GetPlayer(src)
     local TiedPlayer = QBCore.Functions.GetPlayer(playerId)
@@ -807,8 +826,7 @@ RegisterNetEvent('police:server:EscortPlayer', function(playerId)
     local targetPed = GetPlayerPed(playerId)
     local playerCoords = GetEntityCoords(playerPed)
     local targetCoords = GetEntityCoords(targetPed)
-    if #(playerCoords - targetCoords) > 2.5 then return end
-     -- DropPlayer(src, "Attempted exploit abuse")
+    if #(playerCoords - targetCoords) > 2.5 then return DropPlayer(src, "Attempted exploit abuse") end
 
     local Player = QBCore.Functions.GetPlayer(source)
     local EscortPlayer = QBCore.Functions.GetPlayer(playerId)
@@ -827,8 +845,7 @@ RegisterNetEvent('police:server:KidnapPlayer', function(playerId)
     local targetPed = GetPlayerPed(playerId)
     local playerCoords = GetEntityCoords(playerPed)
     local targetCoords = GetEntityCoords(targetPed)
-    if #(playerCoords - targetCoords) > 2.5 then return end
-        -- DropPlayer(src, "Attempted exploit abuse")
+    if #(playerCoords - targetCoords) > 2.5 then return DropPlayer(src, "Attempted exploit abuse") end
 
     local Player = QBCore.Functions.GetPlayer(source)
     local EscortPlayer = QBCore.Functions.GetPlayer(playerId)
@@ -848,13 +865,12 @@ RegisterNetEvent('police:server:SetPlayerOutVehicle', function(playerId)
     local targetPed = GetPlayerPed(playerId)
     local playerCoords = GetEntityCoords(playerPed)
     local targetCoords = GetEntityCoords(targetPed)
-    if #(playerCoords - targetCoords) > 2.5 then return end
-        -- DropPlayer(src, "Attempted exploit abuse")
+    if #(playerCoords - targetCoords) > 2.5 then return DropPlayer(src, "Attempted exploit abuse") end
 
     local EscortPlayer = QBCore.Functions.GetPlayer(playerId)
     if not QBCore.Functions.GetPlayer(src) or not EscortPlayer then return end
 
-    if EscortPlayer.PlayerData.metadata["ishandcuffed"] or EscortPlayer.PlayerData.metadata["isdead"] then
+    if EscortPlayer.PlayerData.metadata["ishandcuffed"] or EscortPlayer.PlayerData.metadata["isdead"] or EscortPlayer.PlayerData.metadata["inlaststand"] then
         TriggerClientEvent("police:client:SetOutVehicle", EscortPlayer.PlayerData.source)
     else
         TriggerClientEvent('QBCore:Notify', src, Lang:t("error.not_cuffed_dead"), 'error')
@@ -867,13 +883,12 @@ RegisterNetEvent('police:server:PutPlayerInVehicle', function(playerId)
     local targetPed = GetPlayerPed(playerId)
     local playerCoords = GetEntityCoords(playerPed)
     local targetCoords = GetEntityCoords(targetPed)
-    if #(playerCoords - targetCoords) > 2.5 then return end
-        -- DropPlayer(src, "Attempted exploit abuse")
+    if #(playerCoords - targetCoords) > 2.5 then return DropPlayer(src, "Attempted exploit abuse") end
 
     local EscortPlayer = QBCore.Functions.GetPlayer(playerId)
     if not QBCore.Functions.GetPlayer(src) or not EscortPlayer then return end
 
-    if EscortPlayer.PlayerData.metadata["ishandcuffed"] or EscortPlayer.PlayerData.metadata["isdead"] then
+    if EscortPlayer.PlayerData.metadata["ishandcuffed"] or EscortPlayer.PlayerData.metadata["isdead"] or EscortPlayer.PlayerData.metadata["inlaststand"] then
         TriggerClientEvent("police:client:PutInVehicle", EscortPlayer.PlayerData.source)
     else
         TriggerClientEvent('QBCore:Notify', src, Lang:t("error.not_cuffed_dead"), 'error')
@@ -886,15 +901,14 @@ RegisterNetEvent('police:server:BillPlayer', function(playerId, price)
     local targetPed = GetPlayerPed(playerId)
     local playerCoords = GetEntityCoords(playerPed)
     local targetCoords = GetEntityCoords(targetPed)
-    if #(playerCoords - targetCoords) > 2.5 then return end
-        -- DropPlayer(src, "Attempted exploit abuse")
+    if #(playerCoords - targetCoords) > 2.5 then return DropPlayer(src, "Attempted exploit abuse") end
 
     local Player = QBCore.Functions.GetPlayer(src)
     local OtherPlayer = QBCore.Functions.GetPlayer(playerId)
     if not Player or not OtherPlayer or Player.PlayerData.job.name ~= "police" or Player.PlayerData.job.type ~= "leo" then return end
 
     OtherPlayer.Functions.RemoveMoney("bank", price, "paid-bills")
-    exports['qb-management']:AddMoney("police", price)
+    exports['qb-banking']:AddMoney("police", price)
     TriggerClientEvent('QBCore:Notify', OtherPlayer.PlayerData.source, Lang:t("info.fine_received", {fine = price}))
 end)
 
@@ -904,8 +918,7 @@ RegisterNetEvent('police:server:JailPlayer', function(playerId, time)
     local targetPed = GetPlayerPed(playerId)
     local playerCoords = GetEntityCoords(playerPed)
     local targetCoords = GetEntityCoords(targetPed)
-    if #(playerCoords - targetCoords) > 2.5 then return end
-        -- DropPlayer(src, "Attempted exploit abuse")
+    if #(playerCoords - targetCoords) > 2.5 then return DropPlayer(src, "Attempted exploit abuse") end
 
     local Player = QBCore.Functions.GetPlayer(src)
     local OtherPlayer = QBCore.Functions.GetPlayer(playerId)
@@ -976,8 +989,7 @@ RegisterNetEvent('police:server:SearchPlayer', function(playerId)
     local targetPed = GetPlayerPed(playerId)
     local playerCoords = GetEntityCoords(playerPed)
     local targetCoords = GetEntityCoords(targetPed)
-    if #(playerCoords - targetCoords) > 2.5 then return end
-    -- DropPlayer(src, "Attempted exploit abuse")
+    if #(playerCoords - targetCoords) > 2.5 then return DropPlayer(src, "Attempted exploit abuse") end
 
     local SearchedPlayer = QBCore.Functions.GetPlayer(playerId)
     if not QBCore.Functions.GetPlayer(src) or not SearchedPlayer then return end
@@ -992,8 +1004,7 @@ RegisterNetEvent('police:server:SeizeCash', function(playerId)
     local targetPed = GetPlayerPed(playerId)
     local playerCoords = GetEntityCoords(playerPed)
     local targetCoords = GetEntityCoords(targetPed)
-    if #(playerCoords - targetCoords) > 2.5 then return end
-        -- DropPlayer(src, "Attempted exploit abuse")
+    if #(playerCoords - targetCoords) > 2.5 then return DropPlayer(src, "Attempted exploit abuse") end
 
     local Player = QBCore.Functions.GetPlayer(src)
     local SearchedPlayer = QBCore.Functions.GetPlayer(playerId)
@@ -1013,8 +1024,7 @@ RegisterNetEvent('police:server:SeizeDriverLicense', function(playerId)
     local targetPed = GetPlayerPed(playerId)
     local playerCoords = GetEntityCoords(playerPed)
     local targetCoords = GetEntityCoords(targetPed)
-    if #(playerCoords - targetCoords) > 2.5 then return end
-        -- DropPlayer(src, "Attempted exploit abuse")
+    if #(playerCoords - targetCoords) > 2.5 then return DropPlayer(src, "Attempted exploit abuse") end
 
     local SearchedPlayer = QBCore.Functions.GetPlayer(playerId)
     if not QBCore.Functions.GetPlayer(src) or not SearchedPlayer then return end
@@ -1035,8 +1045,7 @@ RegisterNetEvent('police:server:RobPlayer', function(playerId)
     local targetPed = GetPlayerPed(playerId)
     local playerCoords = GetEntityCoords(playerPed)
     local targetCoords = GetEntityCoords(targetPed)
-    if #(playerCoords - targetCoords) > 2.5 then return end
-        -- DropPlayer(src, "Attempted exploit abuse")
+    if #(playerCoords - targetCoords) > 2.5 then return DropPlayer(src, "Attempted exploit abuse") end
 
     local Player = QBCore.Functions.GetPlayer(src)
     local SearchedPlayer = QBCore.Functions.GetPlayer(playerId)
@@ -1198,8 +1207,8 @@ end)
 
 RegisterNetEvent('police:server:showFingerprint', function(playerId)
     local src = source
-    TriggerClientEvent('police:client:showFingerprint', playerId, src)
-    TriggerClientEvent('police:client:showFingerprint', src, playerId)
+    TriggerClientEvent('police:client:showFingerprint', playerId, src, playerId)
+    TriggerClientEvent('police:client:showFingerprint', src, playerId, playerId)
 end)
 
 RegisterNetEvent('police:server:showFingerprintId', function(sessionId)
@@ -1208,8 +1217,8 @@ RegisterNetEvent('police:server:showFingerprintId', function(sessionId)
     local fid = Player.PlayerData.metadata["fingerprint"]
     local cid = Player.PlayerData.citizenid
     local name = Player.PlayerData.charinfo.firstname..' '..Player.PlayerData.charinfo.lastname
-    TriggerClientEvent('police:client:showFingerprintId', sessionId, fid, name, cid)
-    TriggerClientEvent('police:client:showFingerprintId', src, fid, name, cid)
+    TriggerClientEvent('police:client:showFingerprintId', sessionId, fid, name, cid, src)
+    TriggerClientEvent('police:client:showFingerprintId', src, fid, name, cid, src)
 end)
 
 RegisterNetEvent('police:server:SetTracker', function(targetId)
@@ -1218,8 +1227,7 @@ RegisterNetEvent('police:server:SetTracker', function(targetId)
     local targetPed = GetPlayerPed(targetId)
     local playerCoords = GetEntityCoords(playerPed)
     local targetCoords = GetEntityCoords(targetPed)
-    if #(playerCoords - targetCoords) > 2.5 then return end
-        -- DropPlayer(src, "Attempted exploit abuse")
+    if #(playerCoords - targetCoords) > 2.5 then return DropPlayer(src, "Attempted exploit abuse") end
 
     local Target = QBCore.Functions.GetPlayer(targetId)
     if not QBCore.Functions.GetPlayer(src) or not Target then return end
@@ -1272,7 +1280,6 @@ RegisterNetEvent('police:server:setEvidenceBagNote', function(item, note)
 end)
 
 RegisterNetEvent('police:server:AddRemove', function(itemname, amount, action, src, hash)
-    print(src)
     local Player = QBCore.Functions.GetPlayer(src)
     if not Player then return end
     if hash ~= seckey then DropPlayer(src, "Attempted exploit abuse") end
@@ -1305,6 +1312,17 @@ RegisterNetEvent('police:server:UpdateEvidenceBag', function(Item, Slot)
     end
 end)
 
+RegisterNetEvent('police:server:UpdateBlipInfo',function(data)
+    local player = source
+    if (not GPSTable[player] or (GPSTable[player].vehClass ~= data.vehClass or GPSTable[player].job ~= data.playerJob or GPSTable[player].gpsactive ~= data.gpsactive)) and player then GPSTable[player] = {vehClass = data.vehClass, job = data.playerJob, call = data.call, source = player, gpsactive = data.gpsactive} end
+end)
+
+RegisterNetEvent('police:server:SetCallSign', function(callsign)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    Player.Functions.SetMetaData("callsign", callsign)
+end)
+
 -- Threads
 CreateThread(function()
     while true do
@@ -1316,7 +1334,7 @@ end)
 
 CreateThread(function()
     while true do
-        Wait(5000)
+        Wait(1000)
         UpdateBlips()
     end
 end)
