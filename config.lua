@@ -45,61 +45,53 @@ Config.UseTarget = 'true'
 Config.GaragePedModel = "s_m_y_hwaycop_01"
 Config.Locations = {
     ["duty"] = {
-        [1] = vector3(440.6539, -975.6356, 30.6899), -- LSPD
-        [2] = vector3(1853.2727, 3689.8499, 34.2670), -- BCSO
-        -- [3] = vector3(1832.68, 3678.4, 34.28), -- Sandy
+        [1] = vector3(440.6539, -975.6356, 30.6899), -- LSPD -----------
+        [2] = vector3(-348.7294, -391.6544, 20.2261), -- SASP
     },
     ["vehicle"] = {
-        [1] = vector4(442.1, -1013.92, 28.63, 184.47), -- LSPD
-        [2] = vector4(1858.95, 3681.95, 33.83, 219.83), --BCSO
-        -- [3] = vector4(1858.95, 3681.95, 33.83, 219.83), -- Sandy
+        [1] = vector4(-378.6870, -377.0715, 25.0952, 137.2214), -- LSPD
+        [2] = vector4(-329.1008, -372.7797, 20.2261, 126.1677), -- SASP
     },
     ["vehspawn"] = { -- The numbers [1] must match the numbers in [vehicle]
-        [1] = vector4(442.4, -1025.02, 28.29, 4.11), -- LSPD
-        [2] = vector4(1850.89, 3673.04, 33.37, 211.26), -- BCSO
-        -- [3] = vector4(1850.89, 3673.04, 33.37, 211.26), -- Sandy
+        [1] = vector4(-366.0589, -369.0981, 24.7567, 351.4824), -- LSPD
+        [2] = vector4(-323.5664, -369.9743, 20.2261, 81.2466), -- SASP
     },
     ["stash"] = {
-        [1] = vector3(451.2411, -993.3360, 30.6899), -- LSPD
-        [2] = vector3(1851.2550, 3693.4045, 34.2669), -- BCSO
-        -- [3] = vector3(1837.89, 3688.08, 34.19), -- Sandy
+        [1] = vector3(-396.1019, -366.4759, 25.0988), -- LSPD
+        [2] = vector3(-356.7449, -389.8293, 20.2261), -- SASP
     },
     ["impound"] = {
-        [1] = vector3(479.08, -1022.54, 28.01), -- LSPD
-        [2] = vector3(1822.14, 3689.16, 33.97),
+        [1] = vector3(-367.7316, -317.5691, 24.7559), -- LSPD
     },
     ["helicopter"] = {
-        [1] = vector4(460.24, -980.18, 43.69, 181.43), -- LSPD
-        [2] = vector4(1852.9902, 3706.7876, 33.2052, 21.3223), -- BCSO
+        [1] = vector4(-401.0993, -344.1393, 70.9549, 164.9746), -- LSPD
+        [2] = vector4(-388.9438, -354.5432, 70.9972, 42.0524), -- SASP
     },
     ["helispawn"] = { -- The numbers [1] must match the numbers in [helicopter]
-        [1] = vector4(449.16, -981.23, 43.69, 165.79), -- LSPD
-        [2] = vector4(1852.5796, 3713.4500, 33.1832, 123.2525), -- BCSO
+        [1] = vector4(-393.6334, -336.3651, 72.8401, 143.5827), -- LSPD
+        [2] = vector4(-377.8946, -354.5368, 72.8402, 82.4391), -- SASP
     },
     ["armory"] = {
-        [1] = vector3(454.1459, -980.0547, 30.6899), -- LSPD
-        [2] = vector3(1841.4331, 3690.6094, 34.2669), -- BCSO
-        -- [3] = vector3(1836.2, 3687.01, 34.19), -- Sandy
+        [1] = vector3(-403.6281, -383.2134, 25.0988), -- LSPD
+        [2] = vector3(-347.6301, -366.5756, 20.2261), -- SASP
     },
     ["trash"] = {
-        [1] = vector3(439.7670, -976.7778, 30.6899), -- LSPD
+        [1] = vector3(-385.8854, -344.0006, 32.3982), -- LSPD
     },
     ["fingerprint"] = {
-        [1] = vector3(461.5555, -989.1661, 24.9154), -- LSPD
-        [2] = vector3(1847.3030, 3680.2104, 30.2594), --BCSO
+        [1] = vector3(-387.9141, -386.9565, 25.0988), -- LSPD
+        [2] = vector3(1847.3030, 3680.2104, 30.2594), -- BSASPCSO
     },
     ["evidence"] = {
-        [1] = vector3(455.1279, -985.4862, 30.6899), -- LSPD
-        [2] = vector3(1855.2788, 3698.9546, 34.2670), -- BCSO
-        -- [3] = vector3(1817.97, 3672.25, 34.2), -- Sandy
+        [1] = vector3(-389.3652, -338.1856, 32.3981), -- LSPD
+        [2] = vector3(-392.9248, -335.3991, 32.3981), -- SASP
     },
     ["labs"] = {
-        [1] = vector3(436.9399, -994.6153, 30.6899), -- LSPD
+        [1] = vector3(-395.7233, -333.4235, 53.2555), -- LSPD
     },
     ["stations"] = {
-        [1] = {label = "Los Santos Police Department", coords = vector4(428.23, -984.28, 29.76, 3.5), sprite= 137, scale= 0.7, colour= 29},
+        [1] = {label = "Rockford Avenue Police Station", coords = vector4(-369.4750, -354.1380, 31.6546, 252.0084), sprite= 137, scale= 0.7, colour= 29},
         [2] = {label = "San Andreas State Prison", coords = vector4(1845.903, 2585.873, 45.672, 272.249), sprite= 137, scale= 0.7, colour= 1},
-        [3] = {label = "Blaine County Sheriffs Office", coords = vector4(1855.6288, 3682.4421, 34.2675, 20.0169), sprite= 137, scale= 0.7, colour= 47},
     },
 }
 
@@ -191,7 +183,7 @@ Config.AuthorizedVehicles = {
         ["code320exp"] = {label = "2020 Explorer", ranks = {6, 7, 8, 9}, livery = 0, price = 400},
         ["Code3Mustang_bb"] = {label = "Mustang", ranks = {8, 9}, livery = 0, price = 500},
     },
-    -- Garage 1 vehicles (State)
+    -- Garage 1 vehicles (SASP)
     [2] = {
         ["Code311cvpi_bb"] = {label = "2011 CPVI", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 300},
         ["Code314tahoe_bb"] = {label = "2014 Tahoe", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 1, price = 300},
@@ -210,26 +202,6 @@ Config.AuthorizedVehicles = {
         ["Code321Tahoe_bb"] = {label = "2021 Tahoe", ranks = {6, 7, 8, 9}, livery = 1, price = 400},
         ["code320exp"] = {label = "2020 Explorer", ranks = {6, 7, 8, 9}, livery = 0, price = 400},
         ["Code3Mustang_bb"] = {label = "Mustang", ranks = {8, 9}, livery = 1, price = 500},
-    },
-    -- Garage 2 vehicles (BCSO)
-    [3] = {
-        ["Code311cvpi_bb"] = {label = "2011 CPVI", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 300},
-        ["Code314tahoe_bb"] = {label = "2014 Tahoe", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 300},
-        ["Code316FPIU_bb"] = {label = "2016 Explorer", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 300},
-        ["boattrailer"] = {label = "Boat Trailer", ranks = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 325},
-        ["Code3Boat1_bb"] = {label = "Boat", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 325},
-        ["Code3Bike1_bb"] = {label = "Kawasaki Motorcycle", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 300},
-        ["Code3Bike2_bb"] = {label = "BMW Motorcycle", ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 300},
-        ["Code3F150_bb"] = {label = "F-150", ranks = {2, 3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 325},
-        ["Code318Charger_bb"] = {label = "2018 Charger", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 350},
-        ["Code318Chargerk9_bb"] = {label = "2014 Charger K9", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 350},
-        ["Code316Taurus_bb"] = {label = "2016 Taurus", ranks = {3, 4, 5, 6, 7, 8, 9}, livery = 2, price = 325},
-        ["Code320tahoe_bb"] = {label = "2020 Tahoe", ranks = {4, 5, 6, 7, 8, 9}, livery = 2, price = 375},
-        ["Code320tahoek9_bb"] = {label = "2020 Tahoe K9", ranks = {4, 5, 6, 7, 8, 9}, livery = 2, price = 375},
-        ["Code321Durango_bb"] = {label = "2021 Durango", ranks = {6, 7, 8, 9}, livery = 2, price = 400},
-        ["Code321Tahoe_bb"] = {label = "2021 Tahoe", ranks = {6, 7, 8, 9}, livery = 2, price = 400},
-        ["code320exp"] = {label = "2020 Explorer", ranks = {6, 7, 8, 9}, livery = 0, price = 400},
-        ["Code3Mustang_bb"] = {label = "Mustang", ranks = {8, 9}, livery = 2, price = 500},
     },
 }
 
@@ -262,6 +234,10 @@ Config.CarItems = {
     [3] = {name = "police_stormram", amount = 1, info = {}, type = "item", slot = 3,},
     [4] = {name = "harness", amount = 1, info = {}, type = "item", slot = 4,},
     [5] = {name = "ducttape", amount = 5, info = {}, type = "item", slot = 5,},
+    [6] = {name = "roadcone", amount = 5, info = {}, type = "item", slot = 6,},
+    [7] = {name = "roadpole", amount = 5, info = {}, type = "item", slot = 7,},
+    [8] = {name = "roadclosedbarrier", amount = 5, info = {}, type = "item", slot = 8,},
+    [9] = {name = "worklight", amount = 5, info = {}, type = "item", slot = 9,},
 }
 
 Config.Items = {
